@@ -45,7 +45,20 @@ const MainPage = () => {
   if (isLoading) return <Spinner />;
 
   return (
-    <div className="p-4 flex flex-wrap gap-4">
+    
+   /* <div>
+    <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+      My Travel 
+      <mark className="px-2 text-white bg-blue-600 rounded dark:bg-blue-500">
+        Checklist
+      </mark>
+    </h1>
+    <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
+      Keep Track of Your Destinations and Dream Getaways
+    </p>
+  </div>
+>*/
+<div className="p-4 flex flex-wrap gap-4">
       {data?.map((record) => (
         <div
           key={record._id}
@@ -60,17 +73,21 @@ const MainPage = () => {
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
             {record.place}
           </p>
+          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            {record.visited}
+          </p>
+
           <button
             type="button"
             onClick={() => handleEditRecord(record._id)}
-            className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+            className="text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900"
           >
             Update
           </button>
           <button
             type="button"
             onClick={() => handleDeleteRecord(record._id)}
-            className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+            className="button" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900"
           >
             Delete
           </button>
